@@ -32,4 +32,6 @@ group :development do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # 1-8-17:
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'simple_form'
 gem 'haml-rails', '~>0.9.0'
