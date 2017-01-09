@@ -1,0 +1,12 @@
+###############################################################################
+# 1-9-17: #####################################################################
+• ISSUE: Selected job category wouldn't save.
+
+• GOTCHA (friendly reminder from the server):
+
+  > Unpermitted parameter: category_id
+
+• SOLUTION:
+: remember adding new attributes/associations (references)
+  to the permitted params.
+###############################################################################
