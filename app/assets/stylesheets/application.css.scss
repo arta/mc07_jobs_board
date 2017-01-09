@@ -14,5 +14,11 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Temp(?) fix form bleeding over the sides:
+.form-horizontal .form-group {
+  margin-left: 0;//-15px;
+  margin-right: 0;//-15px;
+}
