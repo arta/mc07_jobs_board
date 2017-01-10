@@ -6,5 +6,10 @@
     =stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     =javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    =render 'job_filter_links'
-    =yield
+    %nav.navbar.navbar-default
+      .container
+        .navbar-brand Rails Jobs
+        %ul.nav.navbar-nav= render 'job_filter_links'
+        =link_to 'New Job', new_job_path, class:'navbar-text navbar-link navbar-right'
+
+    .container= yield
