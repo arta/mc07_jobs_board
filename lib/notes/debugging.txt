@@ -1,3 +1,27 @@
+################################################################################
+# 1-10-17: #####################################################################
+• Bootstrapping fluid navbar:
+
+• ISSUE: navigation links wouldn't appear in the collapse button (hamburger)
+
+• REASON: faulty setting of multiple `data-` attributes on the element
+  : each `data` attrib is is not assigned separately:
+
+    =button_tag type: 'button', class:'navbar-toggle',
+      data:{ toggle:'collapse' }, data:{ target:'#nav-jobs-user' } do
+      ...
+
+• SOLUTION: individual 'data-' attributes are keys in a `data` hash;
+  setting of individual `data-` attribute complete names (data-toggle,
+  data-target) and values is done in a hash-like fashion:
+
+    =button_tag type: 'button', class:'navbar-toggle',
+      data:{ toggle:'collapse', target:'#nav-jobs-user' } do
+      ...
+###############################################################################
+
+
+
 ###############################################################################
 # 1-9-17: #####################################################################
 • ISSUE: Selected job category wouldn't save.
