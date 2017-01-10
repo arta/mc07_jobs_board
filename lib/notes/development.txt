@@ -5,14 +5,14 @@
 
     Job.joins( :category ).where( categories: { name: 'Name' } )
 
-    : `:category` is Association name (a job belongs_to :category)
-    : `categories:` is table name
+    : `:category` is an association name (a job belongs_to :category)
+    : `categories:` is a table name
 
   : because:
 
     Category.where( name: 'Name' ) = Category.where( { name: 'Name' } )
 
-    : Model name is translated into table name: "categories"."name" = 'Name'
+    : A Model name is translated into a table name: "categories"."name" = 'Name'
 ################################################################################
 • Job filter links helper. Would live in application_helper.
 
