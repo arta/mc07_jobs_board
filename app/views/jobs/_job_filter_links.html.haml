@@ -1,0 +1,6 @@
+#job_filter_links
+  =link_to 'All', jobs_path
+  |
+  -Category.all.each do |category|
+    =link_to category.name, jobs_path( category: category.name )
+    |

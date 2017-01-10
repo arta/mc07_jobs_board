@@ -1,5 +1,45 @@
-###############################################################################
-# 1-8-17: #####################################################################
+################################################################################
+# 1-9-17: ######################################################################
+################################################################################
+• Querying of association:
+
+    Job.joins( :category ).where( categories: { name: 'Name' } )
+
+    : `:category` is Association name (a job belongs_to :category)
+    : `categories:` is table name
+
+  : because:
+
+    Category.where( name: 'Name' ) = Category.where( { name: 'Name' } )
+
+    : Model name is translated into table name: "categories"."name" = 'Name'
+################################################################################
+• Job filter links helper. Would live in application_helper.
+
+  # Not used but works; _job_filter_links partial is simpler.
+  # Keep for reference; usage of content_tag and concat in _helpers.
+  def job_filter_links
+    content_tag :div, { id:'job_filter' } do
+      concat link_to 'All', jobs_path
+      concat ' | '
+      Category.all.each do |category|
+        concat ' | '
+        concat link_to category.name, jobs_path( category: category.name )
+      end
+    end
+  end
+################################################################################
+• Pass extra params via link_to (well, via _path helpers):
+
+  =link_to 'Sweets', foods_path( flavor: 'sweet' ) ..
+
+    <a href='market.com/foods?flavor=sweet', ..>Sweets</a>
+################################################################################
+
+
+
+################################################################################
+# 1-8-17: ######################################################################
 • Message from:
   $ rails g simple_form:install --bootstrap
 
@@ -10,4 +50,4 @@
     classes, '.form-horizontal' or '.form-inline', as the following:
 
     = simple_form_for(@user, html: { class: 'form-horizontal' }) do |form|
-###############################################################################
+################################################################################

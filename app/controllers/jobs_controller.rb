@@ -4,7 +4,13 @@ class JobsController < ApplicationController
   # GET /jobs
   # =link_to .. jobs_path
   def index
-    @jobs = Job.order created_at: :desc
+    @jobs = if params[:category].blank?
+      Job.order created_at: :desc
+    else
+      Job.joins( :category ).
+        where( categories: { name: params[:category] } ).
+        order( created_at: :desc )
+    end
   end
   # Automatically render jobs/index view
 
