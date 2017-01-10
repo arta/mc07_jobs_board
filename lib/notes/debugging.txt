@@ -1,5 +1,23 @@
 ################################################################################
 # 1-10-17: #####################################################################
+################################################################################
+• Bootstrap glyphicons
+
+• ISSUE: font-family of the link text following the glyphicon was changed
+
+• REASON: inaptly written/indented "haml" (again),
+  : as written, the link text was inside the glyphicon span
+
+    =link_to new_user_registration_path do
+      %span.glyphicon.glyphicon-user Sign Up
+
+• SOLUTION:
+  : learn how to write haml aptly to produce intended html
+
+    =link_to new_user_registration_path do
+      %span.glyphicon.glyphicon-user
+      Sign Up
+################################################################################
 • Bootstrapping fluid navbar:
 
 • ISSUE: navigation links wouldn't appear in the collapse button (hamburger)

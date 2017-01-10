@@ -1,0 +1,22 @@
+-if user_signed_in?
+  %li
+    =link_to new_job_path do
+      %span.glyphicon.glyphicon-plus-sign
+      Job
+  %li
+    =link_to edit_user_registration_path do
+      %span.glyphicon.glyphicon-user
+      Account
+  %li
+    =link_to destroy_user_session_path, method: :delete do
+      %span.glyphicon.glyphicon-log-out
+      Sign Out
+-else
+  %li
+    =link_to new_user_registration_path do
+      %span.glyphicon.glyphicon-user
+      Sign Up
+  %li
+    =link_to new_user_session_path do
+      %span.glyphicon.glyphicon-log-in
+      Sign In
