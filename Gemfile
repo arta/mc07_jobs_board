@@ -31,6 +31,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# 1-10-17:
+gem 'devise', '~> 4.2'
 # 1-8-17:
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'simple_form'

@@ -13,4 +13,8 @@
         =link_to 'New Job', new_job_path, class:'navbar-text navbar-link navbar-right'
 
     .container
+      #messages
+        -flash.each do |name, msg|
+          =content_tag :p, msg, class:"#{name}"
+
       .col-md-6.col-md-offset-3= yield
