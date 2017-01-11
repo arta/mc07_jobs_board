@@ -4,9 +4,9 @@
       %span.glyphicon.glyphicon-plus-sign
       Job
   %li
-    =link_to edit_user_registration_path do
+    =link_to edit_user_registration_path, data:{ toggle:'tooltip', placement:'bottom' }, title:current_user.email do
       %span.glyphicon.glyphicon-user
-      Account
+      =current_user.email.truncate( 8 )
   %li
     =link_to destroy_user_session_path, method: :delete do
       %span.glyphicon.glyphicon-log-out
