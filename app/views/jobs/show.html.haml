@@ -4,9 +4,11 @@
     %p= @job.category.name
     %p= @job.description
     %p= @job.company
-    %button.btn.btn-default= link_to 'Apply for this Job', @job.url
+    -unless @job.user == current_user
+      %button.btn.btn-default= link_to 'Apply for this Job', @job.url
 
 #links
   =link_to 'Back', jobs_path, class:'btn btn-sm btn-default'
-  =link_to 'Edit', [:edit, @job], class:'btn btn-sm btn-default'
-  =link_to 'Delete', @job, method: :delete, data:{ confirm:'Are you sure?' }, class:'btn btn-sm btn-default'
+  -if @job.user == current_user
+    =link_to 'Edit', [:edit, @job], class:'btn btn-sm btn-default'
+    =link_to 'Delete', @job, method: :delete, data:{ confirm:'Are you sure?' }, class:'btn btn-sm btn-default'
