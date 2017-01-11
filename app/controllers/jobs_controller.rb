@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-  before_action :set_job, except: [:index, :new, :create]
+  before_action :set_job,            except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /jobs
   # =link_to .. jobs_path
