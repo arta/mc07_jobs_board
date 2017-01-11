@@ -18,7 +18,7 @@ class JobsController < ApplicationController
   # GET /jobs/new
   # =link_to .. new_job_path
   def new
-    @job = Job.new
+    @job = current_user.jobs.new
   end
   # Automatically renders /jobs/new view, which renders _form partial with:
   # =form_for @job ..
@@ -28,7 +28,7 @@ class JobsController < ApplicationController
   # POST /jobs
   # =form_for @job .. when @job.new_record? then <form action='/jobs' method='post'>
   def create
-    @job = Job.new( job_params )
+    @job = current_user.jobs.new( job_params )
 
     if @job.save
       redirect_to @job, notice: 'Job created.'
